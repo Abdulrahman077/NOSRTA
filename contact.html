@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#20231f">
+    <meta name="description" content="Send a message through the NOSTRA student front-end demo. Form submissions are confirmed in the browser only.">
+    <title>Contact Us | NOSTRA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body id="top" class="contact-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="announcement">
+        <p>Your first order is better with <strong>20% off</strong></p>
+        <a href="collections.html">Shop the offer ↗</a>
+        <button class="announcement-close" type="button" aria-label="Dismiss announcement">×</button>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">NOSTRA<span>.</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+        <nav class="navigation" id="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#new-arrivals">New Arrivals</a>
+            <a href="index.html#most-wanted">Most Wanted</a>
+            <a href="collections.html">Collections</a>
+            <a href="contact.html" class="active" aria-current="page">Contact Us</a>
+        </nav>
+        <div class="header-actions" role="group" aria-label="Shopping shortcuts">
+            <button
+                class="header-icon-button"
+                type="button"
+                data-panel-trigger="favourites"
+                aria-label="View favourites, 0 items"
+                aria-controls="shopPanel"
+                aria-expanded="false"
+                title="Favourites"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+                <span class="header-count" data-count="favourites" aria-hidden="true">0</span>
+            </button>
+            <button
+                class="header-icon-button"
+                type="button"
+                data-panel-trigger="cart"
+                aria-label="View shopping bag, 0 items"
+                aria-controls="shopPanel"
+                aria-expanded="false"
+                title="Shopping bag"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+                <span class="header-count" data-count="cart" aria-hidden="true">0</span>
+            </button>
+            <a href="collections.html" class="header-button">Explore Store ↗</a>
+        </div>
+        <div class="shop-panel" id="shopPanel" role="region" aria-labelledby="shopPanelTitle" hidden>
+            <div class="shop-panel-heading">
+                <div><p class="eyebrow" id="shopPanelEyebrow">YOUR PICKS</p><h2 id="shopPanelTitle">Your favourites</h2></div>
+                <button class="shop-panel-close" type="button" aria-label="Close shopping panel">×</button>
+            </div>
+            <div class="shop-panel-items" id="shopPanelItems"></div>
+            <p class="shop-panel-note" id="shopPanelNote"></p>
+        </div>
+        <p class="sr-only" id="shopStatus" role="status" aria-live="polite"></p>
+    </header>
+
+    <main id="main-content">
+        <section class="contact-hero" aria-labelledby="contactTitle">
+            <div class="container">
+                <div class="contact-hero-copy">
+                    <p class="eyebrow">LET'S CONNECT / 003</p>
+                    <h1 id="contactTitle">We'd love to<br>hear <span>from you.</span></h1>
+                    <p>Questions, feedback or just saying hello? There's a space for that here.</p>
+                </div>
+                <figure class="contact-hero-art">
+                    <img
+                        src="images/editorial/contact-fashion-studio.jpg"
+                        alt="Fashion model preparing for a shoot with a photographer in a studio"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                    <figcaption>
+                        <span>THE NOSTRA EDIT / 03</span>
+                        <strong>Wear what<br>feels like you.</strong>
+                    </figcaption>
+                    <span class="contact-art-index" aria-hidden="true">N° 003</span>
+                </figure>
+            </div>
+        </section>
+
+        <section class="contact-section container" aria-label="Contact details and message form">
+            <div class="contact-details">
+                <p class="eyebrow">GET IN TOUCH</p>
+                <h2>Good conversations<br>start somewhere.</h2>
+                <p class="contact-description">Questions about a style, sizing, or your experience? Leave us a note using the form below.</p>
+
+                <div class="contact-detail-item">
+                    <span class="contact-detail-icon" aria-hidden="true">✉</span>
+                    <div>
+                        <h3>Send a message</h3>
+                        <p>Use the demo form on this page.</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail-item">
+                    <span class="contact-detail-icon" aria-hidden="true">✳</span>
+                    <div>
+                        <h3>Quick note</h3>
+                        <p>This demo has no live support team connected.</p>
+                    </div>
+                </div>
+
+                <div class="contact-quote">
+                    <span aria-hidden="true">“</span>
+                    <p>Your feedback helps us make the everyday a little better.</p>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <p class="eyebrow">YOUR MESSAGE</p>
+                <h2>Send us a note.</h2>
+                <p class="form-intro">Fields marked with * are required.</p>
+
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="contactName">Your name *</label>
+                        <input
+                            type="text"
+                            id="contactName"
+                            name="name"
+                            placeholder="e.g. Abdul Rahman"
+                            autocomplete="name"
+                            minlength="2"
+                            maxlength="80"
+                            aria-describedby="nameError"
+                            aria-invalid="false"
+                            required
+                        >
+                        <small class="field-error" id="nameError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email address *</label>
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            maxlength="254"
+                            aria-describedby="emailError"
+                            aria-invalid="false"
+                            required
+                        >
+                        <small class="field-error" id="emailError" aria-live="polite"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactSubject">What is this about?</label>
+                        <select id="contactSubject" name="subject">
+                            <option value="General question">General question</option>
+                            <option value="Product enquiry">Product enquiry</option>
+                            <option value="Order support">Order support</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Your message *</label>
+                        <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us a little more..." minlength="10" maxlength="1000" aria-describedby="messageError" aria-invalid="false" required></textarea>
+                        <small class="field-error" id="messageError" aria-live="polite"></small>
+                    </div>
+
+                    <button class="button button-dark submit-button" type="submit">Send message <span aria-hidden="true">↗</span></button>
+                    <p class="form-message" id="contactSuccess" role="status" aria-live="polite"></p>
+                    <p class="form-note">Demo form only. Your message is not sent or stored.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="contact-bottom" aria-labelledby="contactBottomTitle">
+            <div class="container contact-bottom-inner">
+                <div class="contact-bottom-copy">
+                    <p class="eyebrow">A GOOD NEXT STEP / 004</p>
+                    <h2 id="contactBottomTitle">Your next look starts <span>here.</span></h2>
+                </div>
+                <a class="button button-light" href="collections.html">Explore the collection ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">NOSTRA<span>.</span></a>
+                <p>Everyday essentials, fresh finds and styles that feel like you.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="collections.html">Collections</a>
+                <a href="index.html#new-arrivals">New Arrivals</a>
+            </div>
+            <div class="footer-links">
+                <h3>Need Help?</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="contact.html">Customer Support</a>
+            </div>
+            <div class="footer-note">
+                <span>GOOD STYLE. EVERY DAY.</span>
+                <p>Find your fit. Make it yours.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NOSTRA. Thoughtfully made for everyday.</p>
+            <a href="#top">Back to top ↑</a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+

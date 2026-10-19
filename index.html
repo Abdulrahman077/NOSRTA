@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#20231f">
+    <title>NOSTRA | Everyday Style, Elevated</title>
+    <meta name="description" content="Explore everyday clothing, accessories and fresh styles from NOSTRA.">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="announcement">
+        <p>Your first order is better with <strong>20% off</strong></p>
+        <a href="collections.html">Shop the offer ↗</a>
+        <button class="announcement-close" type="button" aria-label="Dismiss announcement">×</button>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">NOSTRA<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"
+            aria-controls="navLinks">☰</button>
+
+        <nav class="navigation" id="navLinks" aria-label="Main navigation">
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="#new-arrivals">New Arrivals</a>
+            <a href="#most-wanted">Most Wanted</a>
+            <a href="collections.html">Collections</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="header-actions" role="group" aria-label="Shopping shortcuts">
+            <button class="header-icon-button" type="button" data-panel-trigger="favourites"
+                aria-label="View favourites, 0 items" aria-controls="shopPanel" aria-expanded="false"
+                title="Favourites">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" />
+                </svg>
+                <span class="header-count" data-count="favourites" aria-hidden="true">0</span>
+            </button>
+            <button class="header-icon-button" type="button" data-panel-trigger="cart"
+                aria-label="View shopping bag, 0 items" aria-controls="shopPanel" aria-expanded="false"
+                title="Shopping bag">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 8h14l1 13H4L5 8Z" />
+                    <path d="M9 9V6a3 3 0 0 1 6 0v3" />
+                </svg>
+                <span class="header-count" data-count="cart" aria-hidden="true">0</span>
+            </button>
+            <a href="collections.html" class="header-button">Explore Store ↗</a>
+        </div>
+        <div class="shop-panel" id="shopPanel" role="region" aria-labelledby="shopPanelTitle" hidden>
+            <div class="shop-panel-heading">
+                <div>
+                    <p class="eyebrow" id="shopPanelEyebrow">YOUR PICKS</p>
+                    <h2 id="shopPanelTitle">Your favourites</h2>
+                </div>
+                <button class="shop-panel-close" type="button" aria-label="Close shopping panel">×</button>
+            </div>
+            <div class="shop-panel-items" id="shopPanelItems"></div>
+            <p class="shop-panel-note" id="shopPanelNote"></p>
+        </div>
+        <p class="sr-only" id="shopStatus" role="status" aria-live="polite"></p>
+    </header>
+
+    <main id="main-content">
+        <!-- Featured carousel -->
+        <section class="hero-slider" aria-label="Featured NOSTRA collections" aria-roledescription="carousel">
+            <img class="hero-slide-image" id="heroSlideImage" src="images/hero slider/hero section image 1.jpg"
+                alt="Man in a relaxed neutral outfit outdoors among green trees"
+                style="--hero-object-position: 50% 38%; --hero-object-position-mobile: 50% 50%;" fetchpriority="high"
+                decoding="async">
+            <div class="hero-slide-content" aria-live="off" aria-atomic="true">
+                <p class="hero-slide-label" id="heroSlideLabel">EVERYDAY / MADE FOR YOU</p>
+                <h1 id="heroTitle">Wear the everyday.</h1>
+                <p id="heroSubtitle">Thoughtful essentials. Made to feel like you.</p>
+                <div class="hero-slide-actions">
+                    <a href="collections.html" class="hero-slide-button">Shop the edit ↗</a>
+                    <a href="#style-edit" class="hero-slide-secondary">Discover NOSTRA ↓</a>
+                </div>
+            </div>
+            <div class="hero-slider-controls" role="group" aria-label="Slideshow controls">
+                <button id="previousSlide" type="button" aria-label="Show previous featured collection">←
+                    Previous</button>
+                <div class="hero-slider-pagination">
+                    <span id="heroSlidePosition" aria-hidden="true">01 / 03</span>
+                    <div class="hero-slide-dots" role="group" aria-label="Choose a featured collection">
+                        <button class="is-active" type="button" data-slide-to="0" aria-label="Show slide 1"
+                            aria-current="true"></button>
+                        <button type="button" data-slide-to="1" aria-label="Show slide 2"></button>
+                        <button type="button" data-slide-to="2" aria-label="Show slide 3"></button>
+                    </div>
+                </div>
+                <button id="nextSlide" type="button" aria-label="Show next featured collection">Next →</button>
+            </div>
+        </section>
+        <!-- Brand Strip -->
+        <section class="brands" aria-label="Featured brands">
+            <p>GOOD STYLE. GOOD COMPANY.</p>
+            <div class="brand-list">
+                <span class="brand-mark"><img src="images/brand-logos/nike.svg" alt="Nike"></span>
+                <span class="brand-mark"><img src="images/brand-logos/adidas.svg" alt="Adidas"></span>
+                <span class="brand-mark"><img src="images/brand-logos/puma.svg" alt="Puma"></span>
+                <span class="brand-mark brand-mark-wide"><img src="images/brand-logos/newbalance.svg"
+                        alt="New Balance"></span>
+                <span class="brand-mark"><img src="images/brand-logos/converse.svg" alt="Converse"></span>
+            </div>
+        </section>
+
+        <!-- NOSTRA style edit -->
+        <section class="section style-edit" id="style-edit" aria-labelledby="styleEditTitle">
+            <div class="style-edit-intro">
+                <p class="eyebrow">THE NOSTRA EDIT <span>01 — 03</span></p>
+                <h2 id="styleEditTitle">Good style,<br><span>your way.</span></h2>
+                <p>Easy pieces, thoughtful details, and room to make every look your own.</p>
+                <a class="style-edit-all" href="collections.html">Explore all styles <span
+                        aria-hidden="true">↗</span></a>
+            </div>
+            <div class="style-edit-grid">
+                <a class="style-edit-card style-edit-feature" href="collections.html?occasion=everyday"
+                    aria-label="Explore everyday clothing">
+                    <img src="images/products/n7.jpg" alt="Relaxed khaki overshirt for everyday wear" loading="lazy"
+                        decoding="async">
+                    <span class="style-edit-index">01 / THE DAILY ROTATION</span>
+                    <span class="style-edit-copy"><strong>Everyday layers</strong><span>Made to move with you
+                            ↗</span></span>
+                </a>
+                <a class="style-edit-card" href="collections.html?occasion=summer" aria-label="Explore summer styles">
+                    <img src="images/products/f1.jpg" alt="Colourful printed shirt for a weekend look" loading="lazy"
+                        decoding="async">
+                    <span class="style-edit-index">02 / OFF-DUTY</span>
+                    <span class="style-edit-copy"><strong>Weekend colour</strong><span>Find your next print
+                            ↗</span></span>
+                </a>
+                <a class="style-edit-card" href="collections.html?category=accessories"
+                    aria-label="Explore NOSTRA accessories">
+                    <img src="images/products/everyday-bag.jpg" alt="Natural canvas carryall tote bag" loading="lazy"
+                        decoding="async">
+                    <span class="style-edit-index">03 / THE FINISHING TOUCH</span>
+                    <span class="style-edit-copy"><strong>Carry it lightly</strong><span>Everyday accessories
+                            ↗</span></span>
+                </a>
+            </div>
+        </section>
+        <!-- Benefits -->
+        <section class="section benefits">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">THE NOSTRA PROMISE</span>
+                    <h2>Shopping should feel <span>good.</span></h2>
+                </div>
+                <p>Good products, fair value and a smoother shopping experience from start to finish.</p>
+            </div>
+
+            <div class="benefit-grid">
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">✳</span>
+                    <h3>Quality First</h3>
+                    <p>Everyday styles chosen with comfort and quality in mind.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">♡</span>
+                    <h3>Made for You</h3>
+                    <p>Versatile pieces that fit naturally into your lifestyle.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">↗</span>
+                    <h3>Fresh Finds</h3>
+                    <p>Explore new arrivals and find your next favourite look.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon" aria-hidden="true">⌁</span>
+                    <h3>Easy Shopping</h3>
+                    <p>Browse your collection easily on desktop or mobile.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="section arrivals" id="new-arrivals">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">JUST LANDED</span>
+                    <h2>Meet your new <span>favourites.</span></h2>
+                </div>
+                <a href="collections.html" class="outline-button">View all products ↗</a>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <a href="collections.html" class="product-image">
+                        <span class="product-label">NEW IN</span>
+                        <img src="images/products/white-tee.jpg" alt="White everyday T-shirt" loading="lazy"
+                            decoding="async">
+                        <span class="product-shop">Shop this style ↗</span></a>
+                    <div class="product-info">
+                        <div>
+                            <h3>Everyday Essential Tee</h3>
+                            <p>Minimal Collection</p>
+                        </div>
+                        <strong>₹499</strong>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <a href="collections.html" class="product-image">
+                        <span class="product-label">TRENDING</span>
+                        <img src="images/products/denim.jpg" alt="Blue denim jeans" loading="lazy" decoding="async">
+                        <span class="product-shop">Shop this style ↗</span></a>
+                    <div class="product-info">
+                        <div>
+                            <h3>Classic Denim</h3>
+                            <p>Everyday Collection</p>
+                        </div>
+                        <strong>₹1,499</strong>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <a href="collections.html" class="product-image">
+                        <span class="product-label">NEW IN</span>
+                        <img src="images/products/everyday-bag.jpg" alt="Natural canvas carryall tote bag"
+                            loading="lazy" decoding="async">
+                        <span class="product-shop">Shop this style ↗</span></a>
+                    <div class="product-info">
+                        <div>
+                            <h3>Canvas Carryall Tote</h3>
+                            <p>Everyday Accessories</p>
+                        </div>
+                        <strong>₹399</strong>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <a href="collections.html" class="product-image">
+                        <span class="product-label">POPULAR</span>
+                        <img src="images/products/sneakers.jpg" alt="White and coral everyday running sneaker"
+                            loading="lazy" decoding="async">
+                        <span class="product-shop">Shop this style ↗</span></a>
+                    <div class="product-info">
+                        <div>
+                            <h3>Street Runner</h3>
+                            <p>Footwear</p>
+                        </div>
+                        <strong>₹2,299</strong>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Most Wanted -->
+        <section class="section wanted" id="most-wanted">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">THE CROWD FAVOURITES</span>
+                    <h2>Most <span>wanted.</span></h2>
+                </div>
+                <p>Popular picks that deserve a place in your wardrobe. Swipe to explore →</p>
+            </div>
+
+            <div class="wanted-grid" aria-label="Swipe to explore popular styles">
+                <a href="collections.html" class="wanted-card" aria-label="Shop relaxed overshirt">
+                    <img src="images/products/n7.jpg" alt="Relaxed khaki overshirt" loading="lazy" decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop summer shirt">
+                    <img src="images/products/f1.jpg" alt="Colourful summer shirt" loading="lazy" decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop classic denim">
+                    <img src="images/products/denim.jpg" alt="Classic blue denim" loading="lazy" decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop everyday sneakers">
+                    <img src="images/products/sneakers.jpg" alt="Everyday white sneakers" loading="lazy"
+                        decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop lightweight shirt">
+                    <img src="images/products/n3.jpg" alt="Lightweight white shirt" loading="lazy" decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop city sneakers">
+                    <img src="images/products/city-sneakers.jpg" alt="Tan city sneakers" loading="lazy"
+                        decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop everyday tote">
+                    <img src="images/products/everyday-bag.jpg" alt="Neutral everyday tote bag" loading="lazy"
+                        decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="collections.html" class="wanted-card" aria-label="Shop casual shirt">
+                    <img src="images/products/n8.jpg" alt="Charcoal casual shirt" loading="lazy" decoding="async">
+                    <span class="sale-label">POPULAR</span><span class="wanted-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="wanted-footer">
+                <p>Good finds don't stay for long.</p>
+                <a href="collections.html" class="primary-button">Explore all styles ↗</a>
+            </div>
+        </section>
+
+        <!-- Limited Offer -->
+        <section class="offer">
+            <div class="offer-image">
+                <img src="images/offer.jpg" alt="Models wearing relaxed NOSTRA styles" loading="lazy" decoding="async">
+            </div>
+            <div class="offer-content">
+                <span class="eyebrow">A LITTLE SOMETHING FOR YOU</span>
+                <h2>Your next favourite<br>comes with <span>35% off.</span></h2>
+                <p>Find something you love. Enjoy 35% off eligible styles while this limited offer lasts.</p>
+                <a href="collections.html" class="primary-button">Shop the Offer ↗</a>
+                <small>*Promotion shown for demonstration purposes.</small>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-copy">
+                <span class="eyebrow">STAY IN THE LOOP</span>
+                <h2>A little more style<br>in your <span>inbox.</span></h2>
+                <p>Get updates on fresh arrivals, new collections and special offers.</p>
+            </div>
+            <div class="newsletter-signup">
+                <form class="newsletter-form" id="newsletterForm">
+                    <label class="sr-only" for="newsletterEmail">Email address</label>
+                    <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address"
+                        autocomplete="email" required>
+                    <button type="submit">Join Us ↗</button>
+                </form>
+                <p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p>
+                <small>No spam. Just good style.</small>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">NOSTRA<span>.</span></a>
+                <p>Everyday essentials, fresh finds and styles that feel like you.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="collections.html">Collections</a>
+                <a href="#new-arrivals">New Arrivals</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Need Help?</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="contact.html">Customer Support</a>
+            </div>
+
+            <div class="footer-note">
+                <span>GOOD STYLE. EVERY DAY.</span>
+                <p>Find your fit. Make it yours.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 NOSTRA. Thoughtfully made for everyday.</p>
+            <a href="#top" id="backToTop">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

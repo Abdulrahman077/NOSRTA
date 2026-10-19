@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#20231f">
+    <meta
+        name="description"
+        content="Browse NOSTRA everyday clothing and accessories. Search, sort, and filter the collection to find your next favourite."
+    >
+    <title>Collections | NOSTRA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body id="top" class="collections-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="announcement">
+        <p>Your first order is better with <strong>20% off</strong></p>
+        <a href="#collection-products">Shop the offer ↗</a>
+        <button class="announcement-close" type="button" aria-label="Dismiss announcement">×</button>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">NOSTRA<span>.</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+        <nav class="navigation" id="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#new-arrivals">New Arrivals</a>
+            <a href="index.html#most-wanted">Most Wanted</a>
+            <a href="collections.html" class="active" aria-current="page">Collections</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="header-actions" role="group" aria-label="Shopping shortcuts">
+            <button
+                class="header-icon-button"
+                type="button"
+                data-panel-trigger="favourites"
+                aria-label="View favourites, 0 items"
+                aria-controls="shopPanel"
+                aria-expanded="false"
+                title="Favourites"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+                <span class="header-count" data-count="favourites" aria-hidden="true">0</span>
+            </button>
+            <button
+                class="header-icon-button"
+                type="button"
+                data-panel-trigger="cart"
+                aria-label="View shopping bag, 0 items"
+                aria-controls="shopPanel"
+                aria-expanded="false"
+                title="Shopping bag"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+                <span class="header-count" data-count="cart" aria-hidden="true">0</span>
+            </button>
+            <a href="collections.html" class="header-button">Explore Store ↗</a>
+        </div>
+        <div class="shop-panel" id="shopPanel" role="region" aria-labelledby="shopPanelTitle" hidden>
+            <div class="shop-panel-heading">
+                <div><p class="eyebrow" id="shopPanelEyebrow">YOUR PICKS</p><h2 id="shopPanelTitle">Your favourites</h2></div>
+                <button class="shop-panel-close" type="button" aria-label="Close shopping panel">×</button>
+            </div>
+            <div class="shop-panel-items" id="shopPanelItems"></div>
+            <p class="shop-panel-note" id="shopPanelNote"></p>
+        </div>
+        <p class="sr-only" id="shopStatus" role="status" aria-live="polite"></p>
+    </header>
+
+    <main id="main-content">
+        <section class="collection-intro" aria-labelledby="collectionTitle">
+            <div class="container">
+                <div class="collection-intro-copy">
+                    <p class="eyebrow">THE NOSTRA COLLECTION <span>· 01</span></p>
+                    <h1 id="collectionTitle">Find your next <span>favourite.</span></h1>
+                    <p>Easy-to-wear pieces, fresh prints and everyday essentials—picked to feel like you.</p>
+                    <a class="collection-intro-link" href="#collection-products">Browse the collection <span aria-hidden="true">↓</span></a>
+                </div>
+                <div class="collection-intro-art" aria-hidden="true">
+                    <img src="images/boutique.jpg" alt="" fetchpriority="high" decoding="async">
+                    <div class="collection-intro-art-caption">
+                        <span>STYLE, WITH ROOM TO MOVE</span>
+                        <strong>Everyday pieces.<br>Chosen differently.</strong>
+                    </div>
+                    <span class="collection-intro-stamp">EDIT<br>01</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-section" id="collection-products" aria-labelledby="shopTitle">
+            <h2 class="sr-only" id="shopTitle">Shop all products</h2>
+            <aside class="filter-sidebar" aria-label="Product filters">
+                <div class="filter-heading">
+                    <span>REFINE YOUR SEARCH</span>
+                    <span aria-hidden="true">✳</span>
+                </div>
+
+                <fieldset class="filter-group">
+                    <legend>Category</legend>
+                    <label><input type="checkbox" data-category-filter data-filter-group="category" value="clothing"> Clothing</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="category" value="footwear"> Footwear</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="category" value="accessories"> Accessories</label>
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend>Occasion</legend>
+                    <label><input type="checkbox" data-category-filter data-filter-group="occasion" value="everyday"> Everyday</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="occasion" value="summer"> Summer</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="occasion" value="party"> Party</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="occasion" value="travel"> Travel</label>
+                </fieldset>
+
+                <fieldset class="filter-group color-filter-group">
+                    <legend>Colors</legend>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="blue">
+                        <span class="color-swatch swatch-blue" aria-hidden="true"></span>
+                        Blue
+                    </label>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="white">
+                        <span class="color-swatch swatch-white" aria-hidden="true"></span>
+                        White
+                    </label>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="beige">
+                        <span class="color-swatch swatch-beige" aria-hidden="true"></span>
+                        Beige
+                    </label>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="black">
+                        <span class="color-swatch swatch-black" aria-hidden="true"></span>
+                        Black
+                    </label>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="green">
+                        <span class="color-swatch swatch-green" aria-hidden="true"></span>
+                        Green
+                    </label>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="red">
+                        <span class="color-swatch swatch-red" aria-hidden="true"></span>
+                        Red
+                    </label>
+                    <label>
+                        <input type="checkbox" data-category-filter data-filter-group="color" value="multi">
+                        <span class="color-swatch swatch-multi" aria-hidden="true"></span>
+                        Multi
+                    </label>
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend>Arrivals</legend>
+                    <label><input type="checkbox" data-category-filter data-filter-group="arrival" value="new"> New in</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="arrival" value="popular"> Popular</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="arrival" value="classic"> Classics</label>
+                </fieldset>
+
+                <fieldset class="filter-group">
+                    <legend>Price</legend>
+                    <label><input type="checkbox" data-category-filter data-filter-group="priceRange" value="under-500"> Under ₹500</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="priceRange" value="500-1000"> ₹500–₹1,000</label>
+                    <label><input type="checkbox" data-category-filter data-filter-group="priceRange" value="over-1000"> Above ₹1,000</label>
+                </fieldset>
+
+                <button class="clear-btn" id="clearFilters" type="button">Clear all <span aria-hidden="true">↺</span></button>
+            </aside>
+
+            <div class="shop-content">
+                <div class="shop-toolbar">
+                    <label class="search-box">
+                        <span class="sr-only">Search products by name, category, or colour</span>
+                        <input id="productSearch" type="search" placeholder="Search styles, colours, or products..." autocomplete="off" aria-controls="productGrid">
+                        <span aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false"><circle cx="10.8" cy="10.8" r="6.2"></circle><path d="m15.4 15.4 5 5"></path></svg>
+                        </span>
+                    </label>
+                    <div class="results-toolbar">
+                        <p id="productResults" aria-live="polite">9 products</p>
+                        <label for="productSort">Sort by</label>
+                        <select id="productSort" name="sort">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: low to high</option>
+                            <option value="price-high">Price: high to low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <ul class="active-filters" id="activeFilters" aria-label="Active filters" hidden></ul>
+
+                <div class="product-grid collection-grid" id="productGrid" role="list" aria-label="NOSTRA products">
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="everyday summer"
+                        data-color="white"
+                        data-arrival="new"
+                        data-price="499"
+                        data-price-range="under-500"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">NEW IN</span>
+                            <img src="images/products/white-tee.jpg" alt="White everyday essential T-shirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Everyday</p>
+                            <h3>Everyday Essential Tee</h3>
+                            <strong>₹499</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="summer party"
+                        data-color="multi red blue green white"
+                        data-arrival="new"
+                        data-price="699"
+                        data-price-range="500-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">NEW IN</span>
+                            <img src="images/products/f1.jpg" alt="Multicolour printed summer camp shirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Summer</p>
+                            <h3>Garden Print Camp Shirt</h3>
+                            <strong>₹699</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="everyday summer"
+                        data-color="blue"
+                        data-arrival="new"
+                        data-price="799"
+                        data-price-range="500-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">NEW IN</span>
+                            <img src="images/products/n1.jpg" alt="Light blue Oxford everyday shirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Everyday</p>
+                            <h3>Oxford Everyday Shirt</h3>
+                            <strong>₹799</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="summer party"
+                        data-color="beige"
+                        data-arrival="new"
+                        data-price="899"
+                        data-price-range="500-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">NEW IN</span>
+                            <img src="images/products/n4.jpg" alt="Beige patterned short-sleeve shirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Party</p>
+                            <h3>Printed Resort Shirt</h3>
+                            <strong>₹899</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="everyday travel"
+                        data-color="beige"
+                        data-arrival="popular"
+                        data-price="999"
+                        data-price-range="500-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">POPULAR</span>
+                            <img src="images/products/n7.jpg" alt="Relaxed beige utility overshirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Travel</p>
+                            <h3>Khaki Utility Overshirt</h3>
+                            <strong>₹999</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="everyday party"
+                        data-color="black"
+                        data-arrival="classic"
+                        data-price="799"
+                        data-price-range="500-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">CLASSIC</span>
+                            <img src="images/products/n8.jpg" alt="Charcoal short-sleeve camp shirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Everyday</p>
+                            <h3>Charcoal Camp Shirt</h3>
+                            <strong>₹799</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="everyday summer travel"
+                        data-color="white"
+                        data-arrival="classic"
+                        data-price="699"
+                        data-price-range="500-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">CLASSIC</span>
+                            <img src="images/products/n3.jpg" alt="White lightweight long-sleeve shirt" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Summer</p>
+                            <h3>Classic White Shirt</h3>
+                            <strong>₹699</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="clothing"
+                        data-occasion="everyday travel"
+                        data-color="blue black"
+                        data-arrival="popular"
+                        data-price="1499"
+                        data-price-range="over-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">POPULAR</span>
+                            <img src="images/products/denim.jpg" alt="Folded blue and black denim jeans" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Clothing · Everyday</p>
+                            <h3>Classic Denim</h3>
+                            <strong>₹1,499</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="accessories"
+                        data-occasion="everyday travel"
+                        data-color="beige"
+                        data-arrival="new"
+                        data-price="399"
+                        data-price-range="under-500"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">NEW IN</span>
+                            <img src="images/products/everyday-bag.jpg" alt="Natural canvas everyday tote bag" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Accessories · Everyday</p>
+                            <h3>Canvas Carryall Tote</h3>
+                            <strong>₹399</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="footwear"
+                        data-occasion="everyday summer"
+                        data-color="red white"
+                        data-arrival="popular"
+                        data-price="2299"
+                        data-price-range="over-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">POPULAR</span>
+                            <img src="images/products/sneakers.jpg" alt="White and coral everyday running sneaker" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Footwear · Everyday</p>
+                            <h3>Street Runner</h3>
+                            <strong>₹2,299</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="footwear"
+                        data-occasion="everyday travel"
+                        data-color="beige black"
+                        data-arrival="popular"
+                        data-price="1899"
+                        data-price-range="over-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">POPULAR</span>
+                            <img src="images/products/city-sneakers.jpg" alt="Tan and black city sneaker" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Footwear · Everyday</p>
+                            <h3>City Low Sneaker</h3>
+                            <strong>₹1,899</strong>
+                        </div>
+                    </article>
+
+                    <article
+                        role="listitem"
+                        class="collection-product"
+                        data-product
+                        data-category="accessories"
+                        data-occasion="everyday party"
+                        data-color="white black"
+                        data-arrival="new"
+                        data-price="1799"
+                        data-price-range="over-1000"
+                    >
+                        <div class="collection-product-image">
+                            <span class="product-badge">NEW IN</span>
+                            <img src="images/products/watch.jpg" alt="Minimal white and black everyday wristwatch" loading="lazy" decoding="async">
+                        </div>
+                        <div class="collection-product-info">
+                            <p class="product-category">Accessories · Everyday</p>
+                            <h3>Minimal Everyday Watch</h3>
+                            <strong>₹1,799</strong>
+                        </div>
+                    </article>
+                    <p role="listitem" class="empty-state" id="emptyState" hidden>
+                        No products found. Try changing your search or filters.
+                        <button type="button" id="emptyClear">Clear filters</button>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+                <section class="newsletter" aria-labelledby="newsletterTitle">
+            <div class="newsletter-copy">
+                <span class="eyebrow">STAY IN THE LOOP</span>
+                <h2 id="newsletterTitle">A little more style<br>in your <span>inbox.</span></h2>
+                <p>Get updates on fresh arrivals, new collections and special offers.</p>
+            </div>
+            <div class="newsletter-signup">
+                <form class="newsletter-form" id="newsletterForm">
+                    <label class="sr-only" for="newsletterEmail">Email address</label>
+                    <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" autocomplete="email" required>
+                    <button type="submit">Join Us ↗</button>
+                </form>
+                <p class="newsletter-message" id="newsletterMessage" role="status" aria-live="polite"></p>
+                <small>No spam. Just good style.</small>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">NOSTRA<span>.</span></a>
+                <p>Everyday essentials, fresh finds and styles that feel like you.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="#collection-products">Collections</a>
+                <a href="index.html#new-arrivals">New Arrivals</a>
+            </div>
+            <div class="footer-links">
+                <h3>Need Help?</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="contact.html">Customer Support</a>
+            </div>
+            <div class="footer-note">
+                <span>GOOD STYLE. EVERY DAY.</span>
+                <p>Find your fit. Make it yours.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NOSTRA. Thoughtfully made for everyday.</p>
+            <a href="#top">Back to top ↑</a>
+        </div>
+    </footer>
+</body>
+</html>
+

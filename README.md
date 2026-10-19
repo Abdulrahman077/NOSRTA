@@ -1,40 +1,53 @@
-# NOSRTA
-NOSTRA is a responsive e-commerce website featuring product collections, search and filtering, and a contact page, built using HTML, CSS, and JavaScript.
+# NOSTRA – E-commerce Website
 
-A responsive storefront built with plain HTML, CSS, and JavaScript for a front-end web development assignment. It uses local product and brand images and needs no build tools or packages.
+NOSTRA is a responsive e-commerce website built using HTML, CSS, and JavaScript. It features a home page, product collections page, and contact page with a clean and user-friendly interface.
 
-## Project files
+## ✨ Features
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Home page with a split editorial carousel, signature style edit, brand strip, product highlights, offer, and newsletter form |
-| `collections.html` | 12-product catalogue across clothing, footwear, and accessories, with search, filters, sorting, and empty state |
-| `contact.html` | Contact page with client-side form validation |
-| `style.css` | Shared design, home page styling, navigation, and responsive layout |
-| `collections.css` | Collection page layout and filter/product styling |
-| `contact.css` | Contact page layout and form styling |
-| `script.js` | Mobile navigation, automatic home carousel, browser-local bag/favourites, collection search/filter/sort, and demo form behavior |
-| `images/` | Product photography, hero images, and brand marks |
+- **Home Page** – Main landing page for the NOSTRA website.
+- **Collections Page** – Product collection layout with search and filtering functionality planned in JavaScript.
+- **Contact Page** – Contact form with client-side validation.
+- **Responsive Design** – CSS styling for different screen sizes.
+- **Interactive Navigation** – JavaScript-powered navigation menu.
+- **Newsletter Interaction** – Front-end newsletter form behavior.
 
-## Run locally
+## 🛠️ Technologies Used
 
-Keep the `images` folder beside the HTML, CSS, and JavaScript files. Open `index.html` in a browser (or use VS Code Live Server), then use the navigation to visit Collections and Contact Us.
+- HTML5
+- CSS3
+- JavaScript
 
-## Home carousel and shopping shortcuts
+## 📁 Project Structure
 
-The split home hero advances between three local image slides, with previous/next buttons, slide dots, and a play/pause control. It pauses while hovered or focused and respects reduced-motion settings. Product cards on Home and Collections can be added to the shopping bag or favourites; these demo lists stay in the browser and do not process orders.
+```text
+NOSTRA/
+├── index.html
+├── collections.html
+├── contact.html
+├── style.css
+├── script.js
+└── README.md
+```
 
-## Collections behavior
+## 🚀 How to Run the Project
 
-Search checks product names and details such as category, occasion, colour, and arrival type. Each search word must match. If multiple options are selected within one filter group, a product can match any of them; selections from different groups narrow the results together. Selected filters and the search term appear as removable chips. Sorting supports featured order, price, and name. Home style-edit cards can open the catalogue with a matching category or occasion preselected. “Clear all” resets search, filters, and sorting.
+1. Clone or download this repository.
+2. Open the project folder in your code editor.
+3. Open `index.html` in your browser, or use the Live Server extension in Visual Studio Code.
+4. Navigate through the website to explore its pages.
 
-## Demo forms
+## 🔧 Future Improvements
 
-The contact and newsletter forms run in the browser only. They validate input and show confirmation messages, but do not send or save information.
+- Complete and test product search and filtering.
+- Verify mobile navigation across all pages.
+- Connect the contact form to a backend or email service.
+- Improve form handling and validation.
+- Test responsiveness and functionality across devices.
 
-## Presentation checklist
+## 📌 Project Status
 
-- View all three pages at desktop, tablet, and phone widths.
-- On Collections, combine filters, search by product or colour, change sorting, and check the no-results and reset states.
-- On Contact Us, try empty and valid submissions and confirm the inline feedback.
-- Check that the mobile menu opens and closes with its button, Escape, and an outside click.
+**In Progress** – The main website pages and front-end structure are available. Further testing and improvements are needed to confirm all features work correctly.
+
+---
+
+Made with ❤️ using HTML, CSS, and JavaScript.
